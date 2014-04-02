@@ -5,3 +5,6 @@ gem 'rspec-expectations'
 gem 'capybara'
 #Development
 gem 'pry'
+gem 'selenium-webdriver'
+gem 'zip'
+
