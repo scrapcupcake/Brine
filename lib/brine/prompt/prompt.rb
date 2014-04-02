@@ -33,6 +33,6 @@ module Prompt
     result = get_javascript_result("window.BrineTestResult")
     reason = get_javascript_result("window.BrineTestReason")
 
-    result.should be_true, "Manual tester said: #{reason}"
+    result.should be_true, "Manual tester wrote: #{reason}"
   end
 end
