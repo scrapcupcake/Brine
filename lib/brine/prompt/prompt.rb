@@ -11,7 +11,7 @@ module Prompt
   end
 
   def brine_url
-    "//rawgithub.com/brine.js"
+    "//rawgithub.com/scrapcupcake/Brine/master/lib/brine/prompt/brine.js"
   end
 
   def add_src(url)
