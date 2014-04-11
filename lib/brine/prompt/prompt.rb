@@ -11,7 +11,7 @@ module Prompt
   end
 
   def brine_url
-    "https://gist.githubusercontent.com/scrapcupcake/10428904/raw/fa10ca7a14634ac06167536dc86b72c39164e389/brine.js"
+    "//rawgithub.com/brine.js"
   end
 
   def add_src(url)
@@ -29,20 +29,26 @@ module Prompt
 
   def Prompt(scenario)
     message = scenario.steps.collect do |step|
-      step == scenario.current_step ? ">> #{step}<br>" : "#{step}<br>"
+      step == scenario.current_step ? ">> #{step}" : "#{step}"
     end.join("\n")
-    message += "Step passes?<br>"
+    message += "Step passes?"
 
+    add_src_exec(require_url)
+    sleep 0.2
     add_src_exec(brine_url)
+
+    exec_script("Brine.displayPrompt()")
 
     finished = false
     until finished
       sleep 0.1
-      finished = exec_script("window.BrineTestFinished")
+      status = exec_script("window.Brine.status")
+      require "pry"; binding.pry
+      finished = status.finished
     end
 
-    result = exec_script("window.BrineTestResult")
-    reason = exec_script("window.BrineTestReason")
+    result = status.result
+    reason = status.reason
 
     result.should be_true, "Manual tester wrote: #{reason}"
   end

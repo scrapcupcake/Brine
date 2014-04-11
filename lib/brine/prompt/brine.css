@@ -1,0 +1,10 @@
+#BrineTestPanel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    background: white;
+    z-index: 1000
+}
