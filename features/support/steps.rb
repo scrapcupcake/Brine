@@ -1,12 +1,7 @@
-Given(/^I go to google$/) do
-  visit "http://google.com"
+Given(/^I go to the test page$/) do
+  visit "http://localhost:4567/index.html"
 end
 
-When(/^I search for Brine Test$/) do
-  fill_in "q", with: "Brine Test"
-  find("#gbqfb").click
-end
-
-Then(/^I should see Brine Test in the search results$/) do
+Then(/^I should see Brine Test$/) do
   Prompt(@scenario)
 end

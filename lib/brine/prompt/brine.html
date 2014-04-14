@@ -1,11 +1,13 @@
 <div id="BrineTestPanel">
-    <div style="white-space: pre;">
-        {{ message }}
-    </div>
-    <button onclick='window.Brine.pass()'>Pass</button><br>
-    <div>
-        <label>Reason for failure?</label>
-        <button onclick='Brine.fail()'>Fail</button>
-        <br><textarea id='BrineTestMessage'></textarea>
+    <h1>Test Description</h1>
+    <div id="BrineTestMessage">{{ message }}</div>
+    <div id="BrineTestResults">
+        <h1>Test Results</h1>
+        <button id="BrinePass" class="BrineButton" onclick='window.Brine.pass()'>Pass</button>
+        <button id="BrineFail" disabled class="BrineButton" onclick='Brine.fail()'>Fail</button>
+        <div id="BrineReasonPanel">
+            <label>Reason for failure?</label>
+            <br><textarea oninput="Brine.typing()" id='BrineTestReason'></textarea>
+        </div>
     </div>
 </div>

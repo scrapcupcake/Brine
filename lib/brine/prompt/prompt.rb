@@ -7,7 +7,8 @@ module Prompt
   end
 
   def require_url
-    "//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.js"
+    #"//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.js"
+    "require.js"
   end
 
   def brine_url

@@ -1,10 +1,60 @@
 #BrineTestPanel {
+    padding: 10px;
     position: absolute;
     top: 10px;
     right: 10px;
     width: 400px;
-    height: 200px;
     border: 1px solid black;
     background: white;
     z-index: 1000
+}
+
+#BrineTestMessage {
+    white-space: pre;
+    font-size: 13px;
+    font-size: serif;
+}
+
+#BrineTestPanel h1 {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    font-size: 13px;
+    font-family: impact;
+}
+
+#BrineTestResults {
+    margin-top: 12px;
+}
+
+
+.BrineButton {
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    font-size: 18px;
+}
+
+#BrinePass{
+    background-color: LawnGreen;
+}
+
+#BrineFail {
+    background-color: FireBrick;
+}
+
+#BrineReasonPanel {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    font-size: 13px;
+    font-family: impact;
+    height: 60px;
+
+}
+
+#BrineReasonPanel textarea {
+    width: 15em;
+    height: 5em;
 }
